@@ -1,0 +1,57 @@
+﻿@model Test_Code_First_Approach.Models.Client_Registration_Model
+<script src="~/lib/jquery/dist/jquery.js"></script>
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+    function PostData()
+    {
+        var testdata = $("#client").serialize();
+        $.ajax({
+            type:"Post",
+            contentType:"application/json;charset=utf-8",
+            url: "http://localhost:5198/Client/Save",
+            data:testdata
+        })
+    alert("Hello")
+    }
+</script>
+<h2 class="text-center bg-primary">ClientView</h2>
+@*@using (Html.BeginForm("ClientResitration", "ClientView", FormMethod.Post))
+{*@
+    <div class="row">
+        <div class="col-md-3">
+            <div class="form-group">
+                <label>ClientName:</label>
+                @Html.TextBoxFor(m=>m.client_name,new{@class="form-control"})
+                @Html.ValidationMessageFor(m=>m.client_name,"",new{@class="text-danger"})
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="form-group">
+                <label>ClientCode:</label>
+                @Html.TextBoxFor(m=>m.client_code,new{@class="form-control"})
+                @Html.ValidationMessageFor(m=>m.client_code,"",new{@class="text-danger"})
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="form-group">
+                <label>ClientEmail:</label>
+                @Html.TextBoxFor(m=>m.client_email,new{@class="form-control"})
+                @Html.ValidationMessageFor(m=>m.client_email,"",new{@class="text-danger"})
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="form-group">
+                <label>ClientAddress:</label>
+                @Html.TextBoxFor(m=>m.client_address,new{@class="form-control"})
+                @Html.ValidationMessageFor(m=>m.client_address,"",new{@class="text-danger"})
+            </div>
+        </div>
+    </div>
+   
+@*}*@
+<button type="button" class="btn-danger"onclick="PostData()">Save</button>
+@*<button type="reset" class="btn-danger">Reset</button>
+*@
+

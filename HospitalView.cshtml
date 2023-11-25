@@ -1,0 +1,14 @@
+﻿@model Test_Code_First_Approach.Models.Employee_Information_Model
+<script src="~/lib/jquery/dist/jquery.js"></script>
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script>
+    function PostData() {
+        var testdata = $("#Employee").serialize();
+        $.ajax({
+            type: "Post",
+            contentType: "application/json;charset=utf-8",
+            url: "http://localhost:5198/Employee/Save",
+            data: testdata
+        });
+    }
+</script>

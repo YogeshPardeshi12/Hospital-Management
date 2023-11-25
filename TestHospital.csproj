@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{07F107BD-D0EF-4105-83D7-CB086B71F2A5}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>TestHospital</RootNamespace>
+    <AssemblyName>TestHospital</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DesignModels\Test_a_m_lookup_hedar.cs" />
+    <Compile Include="DesignModels\Test_a_m_lookup_line.cs" />
+    <Compile Include="DesignModels\Test_m_client_registration.cs" />
+    <Compile Include="DesignModels\Test_m_department_information.cs" />
+    <Compile Include="DesignModels\Test_m_designation_information.cs" />
+    <Compile Include="DesignModels\Test_m_employee_information.cs" />
+    <Compile Include="DesignModels\Test_m_hospital_information.cs" />
+    <Compile Include="DesignModels\Test_m_item_information.cs" />
+    <Compile Include="DesignModels\Test_m_material_type_infromation.cs" />
+    <Compile Include="DesignModels\Test_m_packing.cs" />
+    <Compile Include="DesignModels\Test_m_person_information.cs" />
+    <Compile Include="DesignModels\Test_m_tax_type_information.cs" />
+    <Compile Include="DesignModels\Test_m_unit_information.cs" />
+    <Compile Include="DesignModels\Test_m_user_Login_information.cs" />
+    <Compile Include="DesignModels\Test_t_medicen_sale_hedar.cs" />
+    <Compile Include="DesignModels\Test_t_medicen_sale_line.cs" />
+    <Compile Include="DesignModels\Test_t_purchase_hedar.cs" />
+    <Compile Include="DesignModels\Test_t_purchase_line.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Hospital_Managment\Hospital_Managment.csproj">
+      <Project>{41bd70e9-498e-44f2-b04f-8f5c4bfd8251}</Project>
+      <Name>Hospital_Managment</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
